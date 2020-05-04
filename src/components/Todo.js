@@ -5,9 +5,11 @@ class Todo extends React.Component {
     super();
  }   
  render(){
-     return{
-         
-     }
+     return(
+         <ul>
+             <li>{this.props.item.task}</li>
+        </ul>
+     )
  }
 
 }
