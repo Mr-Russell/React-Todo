@@ -4,16 +4,16 @@ import TodoForm from './components/TodoForm.js'
 
 
 const tasks = [
-  {
-    task: 'Laundry',
-    id: 1,
-    completed: false
-  },
-  {
-    task: 'Wash Dishes',
-    id: 2,
-    completed: false
-  }
+  // {
+  //   task: 'Laundry',
+  //   id: 1,
+  //   completed: false
+  // },
+  // {
+  //   task: 'Wash Dishes',
+  //   id: 2,
+  //   completed: false
+  // }
 ]
 
 class App extends React.Component {
