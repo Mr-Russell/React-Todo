@@ -36,7 +36,7 @@ class TodoForm extends React.Component{
                     value='Add To List'
                 />
                 <br />
-                <button>
+                <button onClick={this.props.clearCompleted}>
                     Clear Completed
                 </button>
             </form>

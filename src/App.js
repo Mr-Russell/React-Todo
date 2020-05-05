@@ -48,6 +48,22 @@ class App extends React.Component {
     this.setState({tasks: completedTasks})
   }
 
+  clearCompleted = e =>{
+    e.preventDefault()
+    this.setState(prevState =>{
+      return{tasks: prevState.tasks.filter(item =>{
+        return !item.completed
+        })
+      }
+    })
+
+    // const notComplete = this.state.tasks.filter(item =>{
+    //   item.completed=false
+    // })
+
+    // this.setState({tasks: notComplete})
+  }
+
   // this component is going to take care of state, and any change handlers you need to work with your state
   render() {
     return (
@@ -58,7 +74,10 @@ class App extends React.Component {
           tasks={this.state.tasks}
           toggleComplete={this.toggleComplete}
         />
-        <TodoForm addTask={this.addTask}/>
+        <TodoForm 
+          addTask={this.addTask}
+          removeCompleted={this.clearCompleted}
+        />
       </div>
     );
   }
