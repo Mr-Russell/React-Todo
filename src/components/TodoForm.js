@@ -22,24 +22,26 @@ class TodoForm extends React.Component{
 
     render(){
         return(
-            <form onSubmit={this.submitTask}>
-                <input
-                    name='task'
-                    type='text'
-                    onChange={this.inputChange}
-                    value={this.state.entry}
-                />
-                <br />
-                <input
-                    name='add'
-                    type='submit'
-                    value='Add To List'
-                />
-                <br />
-                <button onClick={this.props.clearCompleted}>
-                    Clear Completed
-                </button>
-            </form>
+            <div>
+                <form onSubmit={this.submitTask}>
+                    <input
+                        name='task'
+                        type='text'
+                        onChange={this.inputChange}
+                        value={this.state.entry}
+                    />
+                    <br />
+                    <input
+                        name='add'
+                        type='submit'
+                        value='Add To List'
+                    />
+                    <br />
+                </form>
+             <button onClick={this.props.clearCompleted}>
+                Clear Completed
+            </button>
+         </div>
         )
     }
 }

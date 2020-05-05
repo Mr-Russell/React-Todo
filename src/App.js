@@ -39,7 +39,7 @@ class App extends React.Component {
     const completedTasks = this.state.tasks.map(item =>{
       if (item.id === clickedID){
         return {
-          ...item, purchased: !item.purchased
+          ...item, completed: !item.completed
         }
       }else{
         return item
@@ -49,19 +49,16 @@ class App extends React.Component {
   }
 
   clearCompleted = e =>{
-    e.preventDefault()
-    this.setState(prevState =>{
-      return{tasks: prevState.tasks.filter(item =>{
-        return !item.completed
-        })
-      }
-    })
+    // this.setState({tasks: this.state.tasks.filter(item =>{
+    //     return !item.completed
+    //     })
+    //   }
+    // )
+    
+    const notComplete = this.state.tasks.filter(item => !item.completed)
+    console.log(notComplete)
+    this.setState({tasks: notComplete})
 
-    // const notComplete = this.state.tasks.filter(item =>{
-    //   item.completed=false
-    // })
-
-    // this.setState({tasks: notComplete})
   }
 
   // this component is going to take care of state, and any change handlers you need to work with your state
@@ -76,7 +73,7 @@ class App extends React.Component {
         />
         <TodoForm 
           addTask={this.addTask}
-          removeCompleted={this.clearCompleted}
+          clearCompleted={this.clearCompleted}
         />
       </div>
     );

@@ -8,7 +8,7 @@ class Todo extends React.Component {
  render(){
      return(
          <ul>
-             <li className={`${this.props.item.purchased ? 'purchased' :''}`}
+             <li className={`${this.props.item.completed ? 'completed' :''}`}
                 onClick={()=>
                     this.props.toggleComplete(this.props.item.id)}>
                  {this.props.item.task}
