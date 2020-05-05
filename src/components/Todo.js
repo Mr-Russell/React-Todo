@@ -1,4 +1,5 @@
 import React from 'react'
+import './Todo.css'
 
 class Todo extends React.Component {
  constructor(){
@@ -7,7 +8,11 @@ class Todo extends React.Component {
  render(){
      return(
          <ul>
-             <li>{this.props.item.task}</li>
+             <li className={`${this.props.item.purchased ? 'purchased' :''}`}
+                onClick={()=>
+                    this.props.toggleComplete(this.props.item.id)}>
+                 {this.props.item.task}
+            </li>
         </ul>
      )
  }

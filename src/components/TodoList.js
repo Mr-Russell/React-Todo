@@ -11,7 +11,10 @@ class TodoList extends React.Component{
             <div>
                 {
                     this.props.tasks.map(item =>(
-                        <Todo item={item} />
+                        <Todo 
+                            item={item} 
+                            toggleComplete={this.props.toggleComplete}
+                        />
                     ))
                 }
             </div>

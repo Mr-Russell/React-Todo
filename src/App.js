@@ -35,13 +35,29 @@ class App extends React.Component {
     })
   }
 
+  toggleComplete = clickedID =>{
+    const completedTasks = this.state.tasks.map(item =>{
+      if (item.id === clickedID){
+        return {
+          ...item, purchased: !item.purchased
+        }
+      }else{
+        return item
+      }
+    })
+    this.setState({tasks: completedTasks})
+  }
+
   // this component is going to take care of state, and any change handlers you need to work with your state
   render() {
     return (
       <div>
         <h1>Welcome to your Todo App!</h1>
 
-        <TodoList tasks={this.state.tasks}/>
+        <TodoList 
+          tasks={this.state.tasks}
+          toggleComplete={this.toggleComplete}
+        />
         <TodoForm addTask={this.addTask}/>
       </div>
     );
